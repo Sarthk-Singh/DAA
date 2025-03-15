@@ -9,20 +9,28 @@ int fibonacciRecursive(int n)
     return fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2);
 }
 
-// Iterative approach (Efficient)
-int fibonacciIterative(int n)
+// Recursive Fibonacci series printer
+void printFibonacciRecursive(int n, int a = 0, int b = 1)
 {
-    if (n <= 1)
-        return n;
+    if (n <= 0)
+        return;
+    cout << a << " ";
+    printFibonacciRecursive(n - 1, b, a + b);
+}
 
+// Iterative approach (Efficient)
+void fibonacciSeries(int n)
+{
     int a = 0, b = 1, c;
-    for (int i = 2; i <= n; i++)
+    cout << "Fibonacci Series (Iterative): ";
+    for (int i = 0; i < n; i++)
     {
+        cout << a << " ";
         c = a + b;
         a = b;
         b = c;
     }
-    return b;
+    cout << endl;
 }
 
 int main()
@@ -32,7 +40,13 @@ int main()
     cin >> n;
 
     cout << "Fibonacci (Recursive) of " << n << " is: " << fibonacciRecursive(n) << endl;
-    cout << "Fibonacci (Iterative) of " << n << " is: " << fibonacciIterative(n) << endl;
+    cout << "Fibonacci (Iterative) of " << n << " is: " << fibonacciRecursive(n) << endl;
+
+    fibonacciSeries(n);
+
+    cout << "Fibonacci Series (Recursive): ";
+    printFibonacciRecursive(n);
+    cout << endl;
 
     return 0;
 }

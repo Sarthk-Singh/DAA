@@ -12,19 +12,18 @@ int findMinPlatforms(int arr[], int dep[], int n)
 
     while (i < n && j < n)
     {
-        if (arr[i] <= dep[j])
-        { // A new train arrives before the previous one departs
+        if (arr[i] <= dep[j]) // A new train arrives before the previous one departs
+        { 
             platforms++;
             i++;
         }
-        else
-        { // A train departs
+        else // A train departs
+        { 
             platforms--;
             j++;
         }
         maxPlatforms = max(maxPlatforms, platforms);
     }
-
     return maxPlatforms;
 }
 

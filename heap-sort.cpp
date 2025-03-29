@@ -47,7 +47,7 @@ int main()
     heapSort(arr,n);
     for (int i = 0; i < n; i++)
     {
-        /* code */
+        cout<<arr[i]<<" ";
     }
     return 0;
 }

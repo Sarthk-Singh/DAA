@@ -23,7 +23,6 @@ int dfs(int s, int d, vector<vector<int>> &graph, int k)
                 minCost = min(minCost, graph[s][i] + temp);
         }
     }
-
     return minCost;
 }
 

@@ -33,7 +33,6 @@ void printGraph(vector<vector<int>> adjList)
         cout << endl;
     }
 }
-<<<<<<< HEAD
 bool checkCycle(vector<vector<int>>&adjList,int s,int parent,vector<int>&visited)
 {
     visited[s]=1;
@@ -42,16 +41,6 @@ bool checkCycle(vector<vector<int>>&adjList,int s,int parent,vector<int>&visited
         if(!visited[it])
         {
             if(checkCycle(adjList,it,s,visited))
-=======
-bool checkCycle(vector<vector<int>>&adjList,int node,int parent,vector<int>&visited)
-{
-    visited[node]=1;
-    for(auto it: adjList[node])
-    {
-        if(!visited[it])
-        {
-            if(checkCycle(adjList,it,node,visited))
->>>>>>> c94b8784b852750e01e0819a98f75e1200e52c6a
                 return true;
         }
         else if(it!=parent)
@@ -80,14 +69,7 @@ int main()
         if(!visited[i])
         {
             if(checkCycle(adjList,i,-1,visited))
-<<<<<<< HEAD
                 ans=true;            
-=======
-            {
-                ans=true;            
-                break;
-            }
->>>>>>> c94b8784b852750e01e0819a98f75e1200e52c6a
         }
     }
     
